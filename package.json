@@ -1,0 +1,27 @@
+{
+  "name": "coderspro-weather-app",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/BeataKusza/coderspro-weather-app.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/BeataKusza/coderspro-weather-app/issues"
+  },
+  "homepage": "https://github.com/BeataKusza/coderspro-weather-app#readme",
+  "devDependencies": {
+    "express": "4.15.*",
+    "nodemon": "^1.11.0"
+  },
+  "dependencies": {
+    "bootstrap": "^3.3.7"
+  }
+}
