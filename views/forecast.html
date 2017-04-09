@@ -1,15 +1,23 @@
 Forecast for {{ city }}
+<hr />
+Forecast for:
+<!-- bootstrap class - bg-primary-->
+<!-- ng-class - routeparams-->
+
+<a href="#/forecast/2" ng-class="{ 'bg-primary' : days === '2' }">2</a> |
+<a href="#/forecast/5" ng-class="{ 'bg-primary' : days === '5' }">5</a> |
+<a href="#/forecast/7" ng-class="{ 'bg-primary' : days === '7' }">7</a>
+
+<hr />
 <div ng-repeat="w in weatherResult.list">
-  <div class="row">
-    <div class="col-md-12">
-      <div class="panel panel-default">
-        <div class="panel-heading">
-        <h3 class="panel-title">{{ formatedData(w.dt) | date: 'yyyy-MM-dd'}}</h3>
-      </div>
-      <div class="panel-body">
-        Daytime temperature: {{ convertToCelcius(w.temp.day) }}
-      </div>
-      </div>
+    <div class="row">
+        <div class="col-md-12">
+            <weather-report
+                weather-day="w"
+                formated-date="formatedDate(date)"
+                convert-to-celsius="convertToCelsius(dayTimeTemp)"
+                date-format="'yyyy-MM-dd'">
+            </weather-report>
+        </div>
     </div>
-  </div>
 </div>
