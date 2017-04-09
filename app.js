@@ -30,15 +30,16 @@ function ($scope, cityService) {
   })
 }]);
 
-weatherApp.controller('forecastController', ['$scope','$resource', 'cityService',
-  function ($scope, $resource, cityService) {
+weatherApp.controller('forecastController', ['$scope','$resource', '$log', 'cityService',
+  function ($scope, $resource, $log, cityService) {
     var weatherApi = $resource('http://api.openweathermap.org/data/2.5/forecast/daily');
     $scope.weatherResult = weatherApi.get({
       q: 'Gdansk',
       cnt: 2,
       appid: '9a5c0929cb85bfcc967a51c492de4b5b'
-    }).$promise.then(function (data) {
-      console.log(data);
+    }, function (res) {
+      console.log(res);
+      return res;
     });
 
     $scope.city = cityService.city;
