@@ -7,7 +7,7 @@ Forecast for {{ city }}
         <h3 class="panel-title">{{ w.dt }}</h3>
       </div>
       <div class="panel-body">
-        Daytime temperature: {{ w.temp.day }}
+        Daytime temperature: {{ convertToCelcius(w.temp.day) }}
       </div>
       </div>
     </div>

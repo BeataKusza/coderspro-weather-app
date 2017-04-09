@@ -43,4 +43,9 @@ weatherApp.controller('forecastController', ['$scope','$resource', '$log', 'city
     });
 
     $scope.city = cityService.city;
+
+    $scope.convertToCelcius = function (temperatureInKelvin) {
+      var tempCelcius = temperatureInKelvin-273.15;
+      return tempCelcius.toFixed(1);
+    };
 }]);
